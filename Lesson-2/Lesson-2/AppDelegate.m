@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Lesson-1
+//  Lesson-2
 //
-//  Created by Зинде Иван on 1/14/21.
+//  Created by Зинде Иван on 1/17/21.
 //  Copyright © 2021 Зинде Иван. All rights reserved.
 //
 

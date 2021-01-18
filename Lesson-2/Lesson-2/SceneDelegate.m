@@ -1,13 +1,13 @@
 //
 //  SceneDelegate.m
-//  Lesson-1
+//  Lesson-2
 //
-//  Created by Зинде Иван on 1/14/21.
+//  Created by Зинде Иван on 1/17/21.
 //  Copyright © 2021 Зинде Иван. All rights reserved.
 //
 
 #import "SceneDelegate.h"
-#import "FirstViewController.h"
+#import "MainViewController.h"
 
 @interface SceneDelegate ()
 
@@ -17,20 +17,19 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
-    self.window = [[UIWindow alloc] initWithFrame:windowFrame];
-    [self.window makeKeyAndVisible];
-    
-    FirstViewController *firstController = [[FirstViewController alloc] init];
-    
-    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:firstController];
-    
-    navigationController.view.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = navigationController;
-    
-    UIWindowScene *windowScene = (UIWindowScene *)scene;
-    [self.window setWindowScene:windowScene];
+     self.window = [[UIWindow alloc] initWithFrame:windowFrame];
+     [self.window makeKeyAndVisible];
+
+     MainViewController *mainViewController = [[MainViewController alloc] init];
+
+     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+
+     navigationController.view.backgroundColor = [UIColor whiteColor];
+     self.window.rootViewController = navigationController;
+
+     UIWindowScene *windowScene = (UIWindowScene *)scene;
+     [self.window setWindowScene:windowScene];
 }
 
 

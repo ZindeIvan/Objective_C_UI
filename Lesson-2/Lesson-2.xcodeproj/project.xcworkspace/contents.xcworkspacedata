@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Lesson-1.xcodeproj">
+      location = "self:Lesson-2.xcodeproj">
    </FileRef>
 </Workspace>
