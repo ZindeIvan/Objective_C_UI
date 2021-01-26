@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[NewsViewController viewDidLoad]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_newsItem.content != nil">
+            </PersistentString>
+            <PersistentString
+               value = "![_newsItem.content isEqual:[NSNull null]]">
+            </PersistentString>
+            <PersistentString
+               value = "_newsItem.content">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__36-[HeadersViewController viewDidLoad]_block_invoke:HeadersViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.elements ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__34-[DataManager newsWithCompletion:]_block_invoke:DataManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[HeadersViewController tableView:numberOfRowsInSection:]:HeadersViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.elements.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
