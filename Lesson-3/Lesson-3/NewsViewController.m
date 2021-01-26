@@ -7,6 +7,8 @@
 //
 
 #import "NewsViewController.h"
+#import <SDWebImage/SDWebImage.h>
+
 
 @interface NewsViewController ()
 
@@ -41,7 +43,15 @@
     dateLabel.text = dateString;
     [self.view addSubview: dateLabel];
     
-    CGRect titleLabelFrame = CGRectMake(20.0, 120.0, [UIScreen mainScreen].bounds.size.width - 20.0, 80.0);
+    CGRect imageViewFrame = CGRectMake([UIScreen mainScreen].bounds.size.width /2 - 100.0, 120, 200.0, 150.0);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame: imageViewFrame];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:_newsItem.imageUrl]
+                 placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    imageView.image = [UIImage imageNamed:@"apple"];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
+    
+    CGRect titleLabelFrame = CGRectMake(20.0, 270.0, [UIScreen mainScreen].bounds.size.width - 20.0, 80.0);
     UILabel *titleLabel = [[UILabel alloc] initWithFrame: titleLabelFrame];
     titleLabel.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightSemibold];
     titleLabel.textColor = [UIColor blackColor];
@@ -51,7 +61,7 @@
     titleLabel.text = _newsItem.title;
     [self.view addSubview: titleLabel];
     
-    CGRect textViewframe = CGRectMake(20.0, 200.0, [UIScreen mainScreen].bounds.size.width - 20.0, 150.0);
+    CGRect textViewframe = CGRectMake(20.0, 350.0, [UIScreen mainScreen].bounds.size.width - 20.0, 150.0);
     UITextView *textView = [[UITextView alloc] initWithFrame: textViewframe];
     textView.textColor = [UIColor blackColor];
     if(![_newsItem.content isEqual:[NSNull null]]) {
@@ -62,7 +72,7 @@
     textView.editable = NO;
     [self.view addSubview:textView];
     
-    CGRect autorLabelFrame = CGRectMake(20.0, 350.0, [UIScreen mainScreen].bounds.size.width - 50.0, 20.0);
+    CGRect autorLabelFrame = CGRectMake(20.0, 500.0, [UIScreen mainScreen].bounds.size.width - 50.0, 20.0);
     UILabel *autorLabel = [[UILabel alloc] initWithFrame: autorLabelFrame];
     autorLabel.font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightMedium];
     autorLabel.textColor = [UIColor blackColor];
