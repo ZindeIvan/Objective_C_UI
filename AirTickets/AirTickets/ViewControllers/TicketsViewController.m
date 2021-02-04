@@ -14,6 +14,8 @@
 
 @interface TicketsViewController ()
 @property (nonatomic, strong) NSArray *tickets;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UISegmentedControl *segmentedControlForSorting;
 @end
 
 
@@ -29,6 +31,24 @@
         self.title = @"Избранное";
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.tableView registerClass:[TicketTableViewCell class] forCellReuseIdentifier:TicketCellReuseIdentifier];
+        
+        
+        
+        _segmentedControlForSorting = [[UISegmentedControl alloc] initWithItems:@[@"Возр.", @"Убыв."]];
+        [_segmentedControlForSorting addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
+        _segmentedControlForSorting.tintColor = [UIColor blackColor];
+        _segmentedControlForSorting.selectedSegmentIndex = 0;
+        
+        _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Карта", @"Список"]];
+        [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
+        _segmentedControl.tintColor = [UIColor blackColor];
+        _segmentedControl.selectedSegmentIndex = 0;
+        
+        UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[_segmentedControlForSorting, _segmentedControl]];
+        stackView.spacing = 15.0;
+        self.navigationItem.titleView = stackView;
+        
+        [self changeSource];
     }
     return self;
 }
@@ -51,11 +71,42 @@
     
     if (isFavorites) {
         self.navigationController.navigationBar.prefersLargeTitles = YES;
-        _tickets = [[CoreDataHelper sharedInstance] favorites];
-        [self.tableView reloadData];
+        [self changeSource];
     }
 }
 
+- (void)changeSource
+{
+    switch (_segmentedControl.selectedSegmentIndex) {
+        case 0:
+            switch (_segmentedControlForSorting.selectedSegmentIndex) {
+                case 0:
+                    _tickets = [[CoreDataHelper sharedInstance] favorites:YES andAscendingPrice:YES];
+                    break;
+                case 1:
+                    _tickets = [[CoreDataHelper sharedInstance] favorites:YES andAscendingPrice:NO];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 1:
+            switch (_segmentedControlForSorting.selectedSegmentIndex) {
+                case 0:
+                    _tickets = [[CoreDataHelper sharedInstance] favorites:NO andAscendingPrice:YES];
+                    break;
+                case 1:
+                    _tickets = [[CoreDataHelper sharedInstance] favorites:NO andAscendingPrice:NO];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadData];
+}
 
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

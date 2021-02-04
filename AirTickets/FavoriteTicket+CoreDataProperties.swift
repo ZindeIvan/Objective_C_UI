@@ -26,5 +26,6 @@ extension FavoriteTicket {
     @NSManaged public var price: Int64
     @NSManaged public var returnDate: Date?
     @NSManaged public var to: String?
+    @NSManaged public var fromMap: Bool
 
 }

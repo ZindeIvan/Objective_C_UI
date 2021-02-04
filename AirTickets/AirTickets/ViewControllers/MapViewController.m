@@ -10,6 +10,7 @@
 #import "LocationService.h"
 #import "APIManager.h"
 #import "MapPrice.h"
+#import "CoreDataHelper.h"
 
 @interface MapViewController ()<MKMapViewDelegate>
 
@@ -28,6 +29,7 @@
     self.title = @"Карта цен";
     
     _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    _mapView.delegate = self;
     _mapView.showsUserLocation = YES;
     [self.view addSubview:_mapView];
     
@@ -57,6 +59,36 @@
             [[APIManager sharedInstance] mapPricesFor:_origin withCompletion:^(NSArray *prices) {
                 self.prices = prices;
             }];
+        }
+    }
+}
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        for (MapPrice *price in _prices ) {
+            if (ceilf(price.destination.coordinate.latitude) == ceilf(annotation.coordinate.latitude)
+                && ceilf(price.destination.coordinate.longitude) == ceilf(annotation.coordinate.longitude)) {
+                NSLog(@"%@", price.destination.name);
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
+                UIAlertAction *favoriteAction;
+                if ([[CoreDataHelper sharedInstance] isFavoriteMapPrice:price]) {
+                    favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        [[CoreDataHelper sharedInstance] removeFromFavoriteMapPrice:price];
+                    }];
+                } else {
+                    favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [[CoreDataHelper sharedInstance] addToFavoriteMapPrice:price];
+                    }];
+                }
+                
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+                [alertController addAction:favoriteAction];
+                [alertController addAction:cancelAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+                
+              break;
+            }
         }
     }
 }
