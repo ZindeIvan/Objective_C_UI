@@ -9,14 +9,18 @@
 #import <CoreData/CoreData.h>
 #import "DataManager.h"
 #import "Ticket.h"
+#import "MapPrice.h"
 
 @interface CoreDataHelper : NSObject
 
 + (instancetype)sharedInstance;
 
 - (BOOL)isFavorite:(Ticket *)ticket;
-- (NSArray *)favorites;
+- (NSArray *)favorites:(BOOL)fromMap andAscendingPrice:(BOOL)ascendingPrice;
 - (void)addToFavorite:(Ticket *)ticket;
 - (void)removeFromFavorite:(Ticket *)ticket;
+- (BOOL)isFavoriteMapPrice:(MapPrice *)price;
+- (void)addToFavoriteMapPrice:(MapPrice *)price;
+- (void)removeFromFavoriteMapPrice:(MapPrice *)price;
 
 @end

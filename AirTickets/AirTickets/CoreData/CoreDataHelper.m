@@ -60,8 +60,18 @@
     return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
 }
 
+- (FavoriteTicket *)favoriteFromMapPrice:(MapPrice *)price {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
+    request.predicate = [NSPredicate predicateWithFormat:@"price == %ld AND from == %@ AND to == %@ AND departure == %@ AND expires == %@", (long)price.value, price.origin.name, price.destination.name, price.departure, price.departure];
+    return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
+}
+
 - (BOOL)isFavorite:(Ticket *)ticket {
     return [self favoriteFromTicket:ticket] != nil;
+}
+
+- (BOOL)isFavoriteMapPrice:(MapPrice *)price {
+    return [self favoriteFromMapPrice:price] != nil;
 }
 
 - (void)addToFavorite:(Ticket *)ticket {
@@ -75,6 +85,22 @@
     favorite.from = ticket.from;
     favorite.to = ticket.to;
     favorite.created = [NSDate date];
+    favorite.fromMap = NO;
+    [self save];
+}
+
+- (void)addToFavoriteMapPrice:(MapPrice *)price {
+    FavoriteTicket *favorite = [NSEntityDescription insertNewObjectForEntityForName:@"FavoriteTicket" inManagedObjectContext:_managedObjectContext];
+    favorite.price = price.value;
+    favorite.airline = @"";
+    favorite.departure = price.departure;
+    favorite.expires = price.departure;
+    favorite.flightNumber = 0;
+    favorite.returnDate = price.returnDate;
+    favorite.from = price.origin.name;
+    favorite.to = price.destination.name;
+    favorite.created = [NSDate date];
+    favorite.fromMap = YES;
     [self save];
 }
 
@@ -86,9 +112,18 @@
     }
 }
 
-- (NSArray *)favorites {
+- (void)removeFromFavoriteMapPrice:(MapPrice *)price{
+    FavoriteTicket *favorite = [self favoriteFromMapPrice:price];
+    if (favorite) {
+        [_managedObjectContext deleteObject:favorite];
+        [self save];
+    }
+}
+
+- (NSArray *)favorites:(BOOL)fromMap andAscendingPrice:(BOOL)ascendingPrice {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"price" ascending:ascendingPrice],[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
+    request.predicate = [NSPredicate predicateWithFormat:@"fromMap == %@",[NSNumber numberWithBool:fromMap]];
     return [_managedObjectContext executeFetchRequest:request error:nil];
 }
 
