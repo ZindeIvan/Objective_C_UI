@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  AirTickets
+
+  Created by Зинде Иван on 2/9/21.
+  Copyright © 2021 Зинде Иван. All rights reserved.
+*/
+// TabBarController
+
+"search_tab" = "Search";
+"map_tab" = "Map";
+"favorites_tab" = "Favorites";
+
+// MainViewController
+
+"main_from" = "From";
+"main_to" = "To";
+"main_search" = "Search";
+
+//PlaceViewController
+
+"cities" = "Cities";
+"airports" = "Airports";
+
+// FirstViewController
+
+"about_app_header" = "ABOUT APP";
+"tickets_header" = "AIR TICKETS";
+"map_price_header" = "PRICE MAP";
+"favorites_header" = "FAVORITES";
+
+"about_app_describe" = "App for tickets search";
+"tickets_describe" = "Search for chipest tickets";
+"map_price_describe" = "Look map price";
+"favorites_describe" = "Save tickets to favorites";
+
+"next_button" = "NEXT";
+"done_button" = "DONE";
+
+// TicketsViewController
+
+"tickets_title" = "Tickets";
+"favorites_title" = "Favorite tickets";
+"add_to_favorite" = "Add to favotites";
+"remove_from_favorite" = "Remove from favourites";
+"remind_me" = "Reminde";
+"ticket_reminder" = "Ticket reminer";
+"notification_will_be_sent" = "Notification will be sent";
+"success" = "Success";
+"ascending_tickets"= "Asc.";
+"descending_tickets" = "Desc.";
+"from_map" = "Map";
+"from_search" = "Search";
+
+// Alerts
+
+"error" = "Erorr";
+"tickets_not_found" = "Tickets not found";
+"close" = "Close";
+"not_set_place_arrival_or_departure" = "Need to set From and To";
+"actions_with_tickets" = "Ticket actions";
+"actions_with_tickets_describe" = "What need to be done with ticket?";
+"not_determine_current_city" = "Can't locate current city!";

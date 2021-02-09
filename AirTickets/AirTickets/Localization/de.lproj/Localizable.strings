@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings
+  AirTickets
+
+  Created by Зинде Иван on 2/9/21.
+  Copyright © 2021 Зинде Иван. All rights reserved.
+*/
+// TabBarController
+
+// TabBarController
+
+"search_tab" = "der Suche";
+"map_tab" = "die Karte";
+"favorites_tab" = "Favoriten";
+
+
+// MainViewController
+
+"main_from" = "Wovon";
+"main_to" = "Wohin";
+"main_search" = "Finden";
+
+//PlaceViewController
+
+"cities" = "die Städte";
+"airports" = "die Flughäfen";
+
+// FirstViewController
+
+"about_app_header" = "über die Anwendung";
+"tickets_header" = "die Flugtickets";
+"map_price_header" = "die Preiskarte";
+"favorites_header" = "Favoriten";
+
+"about_app_describe" = "die Flugsuchanwendung";
+"tickets_describe" = "Finden Sie die günstigsten Flüge";
+"map_price_describe" = "Sehen Sie sich die Preiskarte an";
+"favorites_describe" = "Speichern Sie ausgewählte Tickets in den Favoriten";
+
+"next_button" = "WEITER";
+"done_button" = "FERTIG";
+
+// TicketsViewController
+
+"tickets_title" = "die Tickets";
+"favorites_title" = "die ausgewählte Tickets";
+"add_to_favorite" = "Zu den Favoriten hinzufügen";
+"remove_from_favorite" = "Von Favoriten entfernen";
+"remind_me" = "Erinnern";
+"ticket_reminder" = "an Ticket erinnern";
+"notification_will_be_sent" = "Benachrichtigung wird gesendet";
+"success" = "erfolgreich";
+"ascending_tickets"= "Aufsteigend";
+"descending_tickets" = "Absteigend";
+"from_map" = "die Karte";
+"from_search" = "Der Suche";
+
+// Alerts
+
+"error" = "die Fehler";
+"tickets_not_found" = "Für diese Richtung wurden keine Tickets gefunden";
+"close" = "Schließen";
+"not_set_place_arrival_or_departure" = "Geben Sie den Abfahrtsort und den Ankunftsort an";
+"actions_with_tickets" = "Ticketaktionen";
+"actions_with_tickets_describe" = "Was ist mit dem Ticket zu tun?";
+"not_determine_current_city" = "Die aktuelle Stadt kann nicht ermittelt werden!";
