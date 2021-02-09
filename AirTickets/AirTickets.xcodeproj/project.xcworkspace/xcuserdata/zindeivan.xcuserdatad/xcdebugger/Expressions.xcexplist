@@ -6,13 +6,27 @@
          contextName = "-[MapViewController mapView:didSelectAnnotationView:]:MapViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "price.destination.name">
+               value = "ceilf(price.destination.coordinate.latitude) ">
             </PersistentString>
             <PersistentString
                value = "annotation.coordinate">
             </PersistentString>
             <PersistentString
-               value = "ceilf(price.destination.coordinate.latitude) ">
+               value = "price.destination.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TicketsViewController showFavoriteTickets]:TicketsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentViewController ">
+            </PersistentString>
+            <PersistentString
+               value = "self.tabBarController">
+            </PersistentString>
+            <PersistentString
+               value = "self.parentViewController.parentViewController ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

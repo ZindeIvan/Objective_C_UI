@@ -31,6 +31,10 @@
 		B568A2E925CB03E500DAAC13 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = B568A2E625CB03E500DAAC13 /* airports.json */; };
 		B568A2EA25CB03E500DAAC13 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = B568A2E725CB03E500DAAC13 /* cities.json */; };
 		B568A2EB25CB03E500DAAC13 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = B568A2E825CB03E500DAAC13 /* countries.json */; };
+		B5CF842A25D2690600FE776E /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF842925D2690600FE776E /* ProgressView.m */; };
+		B5CF842D25D2ABA400FE776E /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF842C25D2ABA400FE776E /* ContentViewController.m */; };
+		B5CF843025D2AC3E00FE776E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF842F25D2AC3E00FE776E /* FirstViewController.m */; };
+		B5CF843325D2B16E00FE776E /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF843225D2B16E00FE776E /* NotificationCenter.m */; };
 		B5F24FED25CC6C9800F20E0A /* FavoriteTicket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F24FEB25CC6C9800F20E0A /* FavoriteTicket+CoreDataClass.swift */; };
 		B5F24FEE25CC6C9800F20E0A /* FavoriteTicket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F24FEC25CC6C9800F20E0A /* FavoriteTicket+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +83,14 @@
 		B568A2E625CB03E500DAAC13 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
 		B568A2E725CB03E500DAAC13 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		B568A2E825CB03E500DAAC13 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		B5CF842825D2690600FE776E /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		B5CF842925D2690600FE776E /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		B5CF842B25D2ABA400FE776E /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		B5CF842C25D2ABA400FE776E /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		B5CF842E25D2AC3E00FE776E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		B5CF842F25D2AC3E00FE776E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B5CF843125D2B16E00FE776E /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		B5CF843225D2B16E00FE776E /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		B5F24FEA25CC698100F20E0A /* AirTickets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirTickets-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5F24FEB25CC6C9800F20E0A /* FavoriteTicket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteTicket+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B5F24FEC25CC6C9800F20E0A /* FavoriteTicket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteTicket+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -121,6 +133,8 @@
 				B50C077C25CBC23200ECDB3E /* APIManager.m */,
 				B50C078725CBC9AC00ECDB3E /* LocationService.h */,
 				B50C078825CBC9AC00ECDB3E /* LocationService.m */,
+				B5CF843125D2B16E00FE776E /* NotificationCenter.h */,
+				B5CF843225D2B16E00FE776E /* NotificationCenter.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -140,6 +154,10 @@
 				B50C078E25CBCB1700ECDB3E /* MapViewController.m */,
 				B50C079025CBCC2C00ECDB3E /* TabBarController.h */,
 				B50C079125CBCC2C00ECDB3E /* TabBarController.m */,
+				B5CF842B25D2ABA400FE776E /* ContentViewController.h */,
+				B5CF842C25D2ABA400FE776E /* ContentViewController.m */,
+				B5CF842E25D2AC3E00FE776E /* FirstViewController.h */,
+				B5CF842F25D2AC3E00FE776E /* FirstViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +199,7 @@
 				B50C076625CB044100ECDB3E /* Model */,
 				B50C077025CB05B200ECDB3E /* Managers */,
 				B50C077425CBBCF100ECDB3E /* ViewControllers */,
+				B5CF842725D268D500FE776E /* Views */,
 				B568A2C925CB024400DAAC13 /* AppDelegate.h */,
 				B568A2CA25CB024400DAAC13 /* AppDelegate.m */,
 				B568A2CC25CB024400DAAC13 /* SceneDelegate.h */,
@@ -201,6 +220,15 @@
 				B568A2E825CB03E500DAAC13 /* countries.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		B5CF842725D268D500FE776E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5CF842825D2690600FE776E /* ProgressView.h */,
+				B5CF842925D2690600FE776E /* ProgressView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,12 +307,16 @@
 				B50C077725CBBD3B00ECDB3E /* PlaceViewController.m in Sources */,
 				B50C078925CBC9AC00ECDB3E /* LocationService.m in Sources */,
 				B50C078325CBC65500ECDB3E /* TicketsViewController.m in Sources */,
+				B5CF842D25D2ABA400FE776E /* ContentViewController.m in Sources */,
 				B50C079225CBCC2C00ECDB3E /* TabBarController.m in Sources */,
 				B568A2DF25CB024700DAAC13 /* main.m in Sources */,
 				B50C079D25CC5B5900ECDB3E /* Model.xcdatamodeld in Sources */,
+				B5CF843025D2AC3E00FE776E /* FirstViewController.m in Sources */,
 				B50C07A725CC5CAA00ECDB3E /* CoreDataHelper.m in Sources */,
 				B568A2CB25CB024400DAAC13 /* AppDelegate.m in Sources */,
 				B50C077A25CBBE2800ECDB3E /* MainViewController.m in Sources */,
+				B5CF843325D2B16E00FE776E /* NotificationCenter.m in Sources */,
+				B5CF842A25D2690600FE776E /* ProgressView.m in Sources */,
 				B5F24FEE25CC6C9800F20E0A /* FavoriteTicket+CoreDataProperties.swift in Sources */,
 				B5F24FED25CC6C9800F20E0A /* FavoriteTicket+CoreDataClass.swift in Sources */,
 				B50C078C25CBCA5A00ECDB3E /* MapPrice.m in Sources */,
